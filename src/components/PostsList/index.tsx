@@ -1,6 +1,7 @@
 import { jsonPostRepository } from "@/repositories/post";
 import { PostImage } from "../PostImage";
 import { Heading } from "../Heading";
+import { formatDate } from "@/utils/FormatDate/formate-date";
 
 export async function PostList() {
   const posts = await jsonPostRepository.findAll();
@@ -27,11 +28,7 @@ export async function PostList() {
                 className="text-slate-300 block text-sm/tight"
                 dateTime={post.createdAt}
               >
-                {new Date(post.createdAt).toLocaleString("pt-BR", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
-                })}
+                {formatDate(post.createdAt)}
               </time>
 
               <Heading url={postLink}>{post.title}</Heading>
