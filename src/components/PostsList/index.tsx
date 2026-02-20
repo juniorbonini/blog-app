@@ -1,7 +1,6 @@
+import { PostImage } from "@/components/PostImage";
+import { PostSummary } from "@/components/PostSummary";
 import { jsonPostRepository } from "@/repositories/post";
-import { PostImage } from "../PostImage";
-import { Heading } from "../Heading";
-import { formatDate } from "@/utils/FormatDate/formate-date";
 
 export async function PostList() {
   const posts = await jsonPostRepository.findAll();
@@ -23,18 +22,13 @@ export async function PostList() {
                 alt: post.title,
               }}
             />
-            <div className="flex flex-col gap-4 sm:justify-center">
-              <time
-                className="text-slate-300 block text-sm/tight"
-                dateTime={post.createdAt}
-              >
-                {formatDate(post.createdAt)}
-              </time>
-
-              <Heading url={postLink}>{post.title}</Heading>
-
-              <p>{post.excerpt}</p>
-            </div>
+            <PostSummary
+              postLink={postLink}
+              heading="h2"
+              createdAt={post.createdAt}
+              excerpt={post.excerpt}
+              title={post.title}
+            />
           </div>
         );
       })}

@@ -8,15 +8,12 @@ import { PostCoverImageInterface } from "@/interfaces/PostImage/postImage-interf
 export function PostImage({ image, link }: PostCoverImageInterface) {
   return (
     <Link
-      className={clsx(
-        `w-full h-full overflow-hidden rounded-xl`,
-        link.className,
-      )}
+      className={clsx(`w-full overflow-hidden rounded-xl`, link.className)}
       {...link}
     >
       <Image
         className={clsx(
-          `w-full h-full object-cover object-center group-hover:scale-106 transition duration-300`,
+          `w-full h-full  object-cover object-center group-hover:scale-106 transition duration-300`,
           image.className,
         )}
         {...image}

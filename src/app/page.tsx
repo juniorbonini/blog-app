@@ -16,10 +16,6 @@ export default function Home() {
       <Suspense fallback={<SpinLoader />}>
         <PostList />
       </Suspense>
-
-      <footer className="mt-150 text-5xl py-8 text-center font-bold">
-        <p>Footer</p>
-      </footer>
     </Container>
   );
 }
