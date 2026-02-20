@@ -1,4 +1,5 @@
 import { HeaderInterface } from "@/interfaces/Header/header-interface";
+import Link from "next/link";
 
 export function Header({ children }: HeaderInterface) {
   return (
@@ -10,7 +11,12 @@ export function Header({ children }: HeaderInterface) {
             md:text-6xl md:py-11
             lg:text-7xl lg:py-12`}
       >
-        {children}
+        <Link
+          href="#"
+          className=" hover:text-gray-500 transition-colors duration-400"
+        >
+          {children}
+        </Link>
       </h1>
     </header>
   );
