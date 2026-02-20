@@ -19,7 +19,7 @@ export default function Home() {
           image={{
             width: 1200,
             height: 720,
-            src: "/images/female-v-badass-3840x2160-20153.jpg",
+            src: "/images/cyberpunk-2077.jpg",
             priority: true,
             alt: "Image description",
           }}
