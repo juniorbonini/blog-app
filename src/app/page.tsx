@@ -1,4 +1,5 @@
 import { Container } from "@/components/Container";
+import { Header } from "@/components/Header";
 import { PostList } from "@/components/PostsList";
 import { SpinLoader } from "@/components/SpinLoader";
 import { Suspense } from "react";
@@ -6,7 +7,7 @@ import { Suspense } from "react";
 export default function Home() {
   return (
     <Container>
-      <h1>home page</h1>
+      <Header>Blog</Header>
       <Suspense fallback={<SpinLoader />}>
         <PostList />
       </Suspense>

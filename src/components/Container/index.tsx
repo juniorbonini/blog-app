@@ -9,7 +9,7 @@ export function Container({ children, containerClass }: ContainerInterface) {
         containerClass,
       )}
     >
-      <div className="mx-auto max-w-screen-5xlpx-8">{children}</div>
+      <div className="mx-auto max-w-screen-5xl px-8">{children}</div>
     </div>
   );
 }
