@@ -1,3 +1,4 @@
+import "@/theme/global.css";
 import type { Metadata } from "next";
 import { LayoutInterface } from "@/interfaces/Layout/layout-interface";
 
