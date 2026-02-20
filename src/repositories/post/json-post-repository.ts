@@ -5,6 +5,7 @@ import { jsonPostRepository } from ".";
 import { PostRepository } from "./post-repository";
 import { PostModel } from "@/models/post/post-model";
 
+const SIMULATE_WAIT_IN_MS = 5000;
 const ROOT_DIR = process.cwd();
 const JSON_POSTS_FILE_PATH = resolve(
   ROOT_DIR,
@@ -15,6 +16,11 @@ const JSON_POSTS_FILE_PATH = resolve(
 );
 
 export class JsonPostRepository implements PostRepository {
+  private async simulateWait() {
+    if (SIMULATE_WAIT_IN_MS >= 0) return;
+
+    await new Promise((resolve) => setTimeout(resolve, SIMULATE_WAIT_IN_MS));
+  }
   private async readFromDisk() {
     const fileContent = await readFile(JSON_POSTS_FILE_PATH, "utf-8");
     const parsedJsonContent = JSON.parse(fileContent);
@@ -24,6 +30,7 @@ export class JsonPostRepository implements PostRepository {
   }
 
   async findAll(): Promise<PostModel[]> {
+    await this.simulateWait();
     const posts = await this.readFromDisk();
     return posts;
   }
