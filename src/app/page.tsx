@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import { PostList } from "@/components/PostsList";
 import { SpinLoader } from "@/components/SpinLoader";
 import { PostFeature } from "@/components/PostFeature";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
       <Suspense fallback={<SpinLoader />}>
         <PostList />
       </Suspense>
-
     </>
   );
 }

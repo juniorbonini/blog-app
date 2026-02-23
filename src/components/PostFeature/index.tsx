@@ -1,12 +1,13 @@
 import { PostImage } from "@/components/PostImage";
 import { PostSummary } from "../PostSummary";
-import { jsonPostRepository } from "@/repositories/post";
 import { formatDate } from "@/utils/FormatDate/formate-date";
+import { findAllPublicPostsCached } from "@/lib/posts/queires";
 
 export async function PostFeature() {
-  const posts = await jsonPostRepository.findAllPublic();
+  const posts = await findAllPublicPostsCached();
   const post = posts[0];
   const postLink = `/post/${post.slug}`;
+
   return (
     <>
       <section className="grid grid-cols-1 gap-8 mb-16 sm:grid-cols-2 group">
