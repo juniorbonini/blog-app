@@ -5,7 +5,7 @@ export function Container({ children, containerClass }: ContainerInterface) {
   return (
     <div
       className={clsx(
-        "text-slate-200 bg-slate-800 min-h-screen",
+        "text-primary bg-background min-h-screen",
         containerClass,
       )}
     >

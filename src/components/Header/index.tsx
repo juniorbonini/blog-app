@@ -15,7 +15,7 @@ export function Header({ children, className }: HeaderInterface) {
             ${className ?? ""}
             `}
       >
-        <Link href="#" className="hover:text-gray-500 transition duration-400">
+        <Link href="#" className="hover:text-indigo transition duration-400">
           {children}
         </Link>
       </h1>

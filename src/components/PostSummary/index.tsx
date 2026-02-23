@@ -11,7 +11,7 @@ export function PostSummary({
   return (
     <div className="flex flex-col gap-4 sm:justify-center">
       <time
-        className="text-slate-300 block text-sm/tight"
+        className="text-indigo block text-sm/tight"
         dateTime={createdAt}
         title={createdAt}
       >
@@ -22,7 +22,7 @@ export function PostSummary({
         {title}
       </Heading>
 
-      <p>{excerpt}</p>
+      <p className="text-secondary">{excerpt}</p>
     </div>
   );
 }
