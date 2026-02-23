@@ -15,25 +15,6 @@ export default function Home() {
         <PostList />
       </Suspense>
 
-      <footer
-        className={"w-full h-67 rounded-4xl flex items-center justify-center"}
-      >
-        <p className="text-3xl">
-          Feito e produzido por{" "}
-          <Link
-            href="https://github.com/juniorbonini/blog-app"
-            className={`
-                  text-indigo-400 relative inline-block
-                   transition-colors duration-300 z-10
-                   before:content-[""] before-absolute
-                   before-inset-0 before-
-
-               `}
-          >
-            Junior Bonini
-          </Link>
-        </p>
-      </footer>
     </>
   );
 }
