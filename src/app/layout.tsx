@@ -1,16 +1,22 @@
 import "@/theme/global.css";
 import type { Metadata } from "next";
 import { LayoutInterface } from "@/interfaces/Layout/layout-interface";
+import { Container } from "@/components/Container";
+import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Criado po Junior Bonini com Next.js",
-  description: "Blog criado com Next.js.",
+  title: "Game Guide Hub",
 };
 
 export default function RootLayout({ children }: LayoutInterface) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <Container>
+          <Header>Game Guide Hub</Header>
+          {children}
+        </Container>
+      </body>
     </html>
   );
 }

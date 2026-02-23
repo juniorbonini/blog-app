@@ -1,7 +1,6 @@
 import { resolve } from "path";
 import { readFile } from "fs/promises";
 
-import { jsonPostRepository } from ".";
 import { PostRepository } from "./post-repository";
 import { PostModel } from "@/models/post/post-model";
 
@@ -29,10 +28,10 @@ export class JsonPostRepository implements PostRepository {
     return posts;
   }
 
-  async findAll(): Promise<PostModel[]> {
+  async findAllPublic(): Promise<PostModel[]> {
     await this.simulateWait();
-    const posts = await this.readFromDisk();
-    return posts;
+    const posts: PostModel[] = await this.readFromDisk();
+    return posts.filter((post) => post.published === true);
   }
 
   async findOne(id: string): Promise<PostModel> {
@@ -46,19 +45,3 @@ export class JsonPostRepository implements PostRepository {
     return foundPost;
   }
 }
-
-// (async () => {
-//   const posts = await jsonPostRepository.findAll();
-
-//   posts.forEach((post) => {
-//     console.log(post.id);
-//   });
-// })();
-
-(async () => {
-  const posts = await jsonPostRepository.findOne(
-    "1b6a5f57-8a19-4933-91f4-1af678464desd",
-  );
-
-  console.log(posts);
-})();

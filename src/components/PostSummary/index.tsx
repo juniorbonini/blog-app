@@ -1,7 +1,3 @@
-import {
-  formatDate,
-  formatRelativeDate,
-} from "@/utils/FormatDate/formate-date";
 import { Heading } from "@/components/Heading";
 import { PostSummaryInterface } from "@/interfaces/PostSummary/postSumary-interface";
 
@@ -17,12 +13,12 @@ export function PostSummary({
       <time
         className="text-slate-300 block text-sm/tight"
         dateTime={createdAt}
-        title={formatRelativeDate(createdAt)}
+        title={createdAt}
       >
-        {formatDate(createdAt)}
+        {createdAt}
       </time>
 
-      <Heading as={heading} url={postLink}>
+      <Heading className="truncate" as={heading} url={postLink}>
         {title}
       </Heading>
 

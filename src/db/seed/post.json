@@ -95,6 +95,19 @@
       "createdAt": "2026-02-19T00:00:00Z",
       "updatedAt": "2026-02-19T00:00:00Z",
       "author": "Game Guide Hub"
+    },
+
+    {
+      "id": "9",
+      "title": "Star Wars Jedi: Fallen Order — Guia Completo",
+      "slug": "star-wars-jedi-fallen-order-guia-completo",
+      "excerpt": "Aprenda os fundamentos de combate, progressão e exploração em Jedi: Fallen Order com este guia prático para iniciantes.",
+      "content": "Neste guia de Star Wars Jedi: Fallen Order, você vai aprender as mecânicas básicas de combate, como usar a Força de forma eficiente, explorar os mapas, melhorar suas habilidades e enfrentar inimigos mais fortes. Ideal para quem está começando ou quer evoluir mais rápido no jogo.",
+      "coverImageUrl": "/Images/jedi-fallen-order.jpg",
+      "published": true,
+      "createdAt": "2026-02-20T12:00:00.000Z",
+      "updatedAt": "2026-02-20T12:00:00.000Z",
+      "author": "Luiz Augusto"
     }
   ]
 }

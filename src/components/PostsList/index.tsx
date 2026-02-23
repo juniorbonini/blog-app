@@ -1,9 +1,10 @@
 import { PostImage } from "@/components/PostImage";
 import { PostSummary } from "@/components/PostSummary";
 import { jsonPostRepository } from "@/repositories/post";
+import { formatDate } from "@/utils/FormatDate/formate-date";
 
 export async function PostList() {
-  const posts = await jsonPostRepository.findAll();
+  const posts = await jsonPostRepository.findAllPublic();
 
   return (
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -25,7 +26,7 @@ export async function PostList() {
             <PostSummary
               postLink={postLink}
               heading="h2"
-              createdAt={post.createdAt}
+              createdAt={formatDate(post.createdAt)}
               excerpt={post.excerpt}
               title={post.title}
             />
