@@ -3,9 +3,11 @@
 @theme {
   --color-*: initial;
   --color-background: #0f172a;
+  --color-background-secondary: #1e293b;
+
+  --color-indigo: #818cf8;
+  --color-mutted: #64748b;
   --color-surface: #1e293b;
   --color-primary: #e2e8f0;
   --color-secondary: #94a3b8;
-  --color-mutted: #64748b;
-  --color-indigo: #818cf8;
 }

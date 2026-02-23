@@ -3,9 +3,7 @@ import Link from "next/link";
 export function Footer() {
   return (
     <div>
-      <footer
-        className={"w-full h-67 rounded-4xl flex items-center justify-center"}
-      >
+      <footer className={"text-center pb-16"}>
         <p className="text-3xl">
           Feito e produzido por{" "}
           <Link
