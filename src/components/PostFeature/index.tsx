@@ -1,6 +1,5 @@
 import { PostImage } from "@/components/PostImage";
 import { PostSummary } from "../PostSummary";
-import { formatDate } from "@/utils/FormatDate/formate-date";
 import { findAllPublicPostsCached } from "@/lib/posts/queires";
 
 export async function PostFeature() {
@@ -27,7 +26,7 @@ export async function PostFeature() {
         <PostSummary
           postLink={postLink}
           heading="h1"
-          createdAt={formatDate(post.createdAt)}
+          createdAt={post.createdAt}
           excerpt={post.excerpt}
           title={post.title}
         />

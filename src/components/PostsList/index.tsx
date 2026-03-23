@@ -1,7 +1,6 @@
 import { PostImage } from "@/components/PostImage";
 import { PostSummary } from "@/components/PostSummary";
 import { findAllPublicPostsCached } from "@/lib/posts/queires";
-import { formatDate } from "@/utils/FormatDate/formate-date";
 
 export async function PostList() {
   const posts = await findAllPublicPostsCached();
@@ -26,7 +25,7 @@ export async function PostList() {
             <PostSummary
               postLink={postLink}
               heading="h2"
-              createdAt={formatDate(post.createdAt)}
+              createdAt={post.createdAt}
               excerpt={post.excerpt}
               title={post.title}
             />

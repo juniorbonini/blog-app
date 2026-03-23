@@ -1,5 +1,6 @@
 import { Heading } from "@/components/Heading";
 import { PostSummaryInterface } from "@/interfaces/PostSummary/postSumary-interface";
+import { PostDate } from "../PostDate";
 
 export function PostSummary({
   postLink,
@@ -10,14 +11,7 @@ export function PostSummary({
 }: PostSummaryInterface) {
   return (
     <div className="flex flex-col gap-4 sm:justify-center">
-      <time
-        className="text-indigo block text-sm/tight"
-        dateTime={createdAt}
-        title={createdAt}
-      >
-        {createdAt}
-      </time>
-
+      <PostDate dateTime={createdAt} />
       <Heading className="truncate" as={heading} url={postLink}>
         {title}
       </Heading>

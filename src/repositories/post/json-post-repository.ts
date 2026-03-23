@@ -4,7 +4,7 @@ import { readFile } from "fs/promises";
 import { PostRepository } from "./post-repository";
 import { PostModel } from "@/models/post/post-model";
 
-const SIMULATE_WAIT_IN_MS = 5000;
+const SIMULATE_WAIT_IN_MS = 200;
 const ROOT_DIR = process.cwd();
 const JSON_POSTS_FILE_PATH = resolve(
   ROOT_DIR,
@@ -31,6 +31,7 @@ export class JsonPostRepository implements PostRepository {
   async findAllPublic(): Promise<PostModel[]> {
     await this.simulateWait();
     const posts: PostModel[] = await this.readFromDisk();
+
     return posts.filter((post) => post.published === true);
   }
 
