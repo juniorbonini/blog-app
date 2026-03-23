@@ -7,10 +7,8 @@ import { PostFeature } from "@/components/PostFeature";
 export default function Home() {
   return (
     <>
-      <Suspense fallback={<SpinLoader />}>
+      <Suspense fallback={<SpinLoader containerClass="min-h-20 mb-46 mt-46" />}>
         <PostFeature />
-      </Suspense>
-      <Suspense fallback={<SpinLoader />}>
         <PostList />
       </Suspense>
     </>

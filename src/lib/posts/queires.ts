@@ -1,12 +1,12 @@
 import { jsonPostRepository } from "@/repositories/post";
 import { notFound } from "next/navigation";
-import { cache } from "react";
+import { unstable_cache } from "next/cache";
 
-export const findAllPublicPostsCached = cache(
+export const findAllPublicPostsCached = unstable_cache(
   async () => await jsonPostRepository.findAllPublic(),
 );
 
-export const findBySlugCached = cache(async (slug: string) => {
+export const findBySlugCached = unstable_cache(async (slug: string) => {
   const post = await jsonPostRepository.findBySlug(slug).catch(() => undefined);
 
   if (!post) {
@@ -16,6 +16,6 @@ export const findBySlugCached = cache(async (slug: string) => {
   return post;
 });
 
-export const findPosByIdCached = cache(
+export const findPosByIdCached = unstable_cache(
   async (id: string) => await jsonPostRepository.findOne(id),
 );

@@ -16,7 +16,7 @@ const JSON_POSTS_FILE_PATH = resolve(
 
 export class JsonPostRepository implements PostRepository {
   private async simulateWait() {
-    if (SIMULATE_WAIT_IN_MS >= 0) return;
+    if (SIMULATE_WAIT_IN_MS <= 0) return;
 
     await new Promise((resolve) => setTimeout(resolve, SIMULATE_WAIT_IN_MS));
   }
@@ -35,7 +35,7 @@ export class JsonPostRepository implements PostRepository {
   }
 
   async findOne(id: string): Promise<PostModel> {
-    const post = await this.readFromDisk();
+    const post = await this.findAllPublic();
     const foundPost = post.find((post) => post.id === id);
 
     if (!foundPost) {
@@ -46,7 +46,6 @@ export class JsonPostRepository implements PostRepository {
   }
 
   async findBySlug(slug: string): Promise<PostModel> {
-    await this.simulateWait();
     const posts = await this.findAllPublic();
     const post = posts.find((post) => post.slug === slug);
 
